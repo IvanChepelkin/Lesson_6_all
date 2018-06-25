@@ -45,11 +45,11 @@ public class Circle {
 
         return area;
     }
-
+// Выводим площади окружностей
     public void infoCircle(double area){
         System.out.println("Площадь окружности "+area+" см²");
     }
-
+// Сравниваем площади окружностей
     public void compareArea(double area1, double area2){
         if (area1 == area2){
             System.out.println("Площади окружностей равны");
@@ -62,10 +62,11 @@ public class Circle {
         }
 
     }
-
+// Смотрим пересечение окружностей
     public void findIntersection(int x1,int x2,int y1,int y2,int radius1,int radius2){
 
-        double d = Math.sqrt(Math.pow((x1-x2),2)+(Math.pow((y1-y2),2)));
+        double d = Math.sqrt(Math.pow((x1-x2),2)+(Math.pow((y1-y2),2)));//формула считает расстояние
+                                                                       // между центрами окружностей
         System.out.println("Расстояние между центрами окружностей "+ d);
         if(radius1+radius2 > d){
             System.out.println("Окружности не пересекаются ");
