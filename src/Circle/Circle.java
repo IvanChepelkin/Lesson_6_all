@@ -4,17 +4,19 @@ public class Circle {
     private int x;
     private int y;
     private int radius;
-    public double area;
+    private double area;
 
     public static void main(String[] args) {
         Circle circle1 = new Circle(0, 0, 12);
-        Circle circle2 = new Circle(3, 5, 12);
+        Circle circle2 = new Circle(3, 5, 11);
 
-        circle1.getArea();
-        circle2.getArea();
         circle1.infoCircle(circle1.getArea());
         circle2.infoCircle(circle2.getArea());
         circle1.compareArea(circle1.getArea(),circle2.getArea());
+
+        circle1.findIntersection(circle1.getX(),circle2.getX(),circle1.getY(),circle2.getY(),
+                circle1.getRadius(),circle2.getRadius());
+
 
     }
 
@@ -60,6 +62,27 @@ public class Circle {
         }
 
     }
-    
+
+    public void findIntersection(int x1,int x2,int y1,int y2,int radius1,int radius2){
+
+        double d = Math.sqrt(Math.pow((x1-x2),2)+(Math.pow((y1-y2),2)));
+        System.out.println("Расстояние между центрами окружностей "+ d);
+        if(radius1+radius2 > d){
+            System.out.println("Окружности не пересекаются ");
+        }
+        else if (radius1+radius2 < d){
+            System.out.println("Окружности пересекаются ");
+        }
+        else if (radius1+radius2 == d){
+            if (radius1>radius2){
+                System.out.println("Окружность 2 вписана в окружность 1 ");
+            }
+            else if (radius1<radius2){
+                System.out.println("Окружность 1 вписана в окружность 2 ");
+            }
+        }
+    }
+
+
 
 }
