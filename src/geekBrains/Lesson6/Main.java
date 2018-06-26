@@ -1,10 +1,15 @@
+/*
+        Студент: Чепёлкин Иван
+        ДЗ №6 по курсу Java. Уровень 1
+        Преподователь: Артём Евдокимов
+*/
+
 package geekBrains.Lesson6;
 
 class Animal {
     public Animal() {
     }
 
-    ;
 
     public  void run(int runLenth) {
 
